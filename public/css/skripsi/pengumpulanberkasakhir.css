@@ -1,0 +1,73 @@
+/* navbar */
+.navbar {
+    background-color: rgb(163, 4, 4) !important;
+    color: white !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    color: white !important;
+    font-size: 1.5rem;
+    margin-left: 90px;
+}
+.profile-menu {
+    margin-right: 90px;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ddd !important;
+}
+
+.dropdown-menu {
+    min-width: 250px;
+}
+
+.profile-dropdown {
+    right: 20px;
+    top: 60px;
+    min-width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+.profile-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #3b82f6;
+}
+
+
+/* main content*/
+.main-content {
+    padding: 2rem;
+    background-color: #f8f9fa;
+    min-height: calc(100vh - 70px);
+}
+
+.form-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.date-picker-icon {
+    background-color: #6c757d;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+}
+
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: white;
+    border-top: 1px solid #dee2e6;
+}

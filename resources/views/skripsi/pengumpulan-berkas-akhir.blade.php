@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SISTA - Proposal Skripsi</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel ="stylesheet" href="css/tampilan/jadwalbimbingan.css">
+    <title>SISTA - Pengumpulan Berkas Akhir</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/skripsi/pengumpulanberkasakhir.css">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -28,7 +27,8 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('pengajuan-proposal') }}">Pengajuan Proposal</a></li>
                             <li><a class="dropdown-item" href="{{ route('pendaftaran-seminar-proposal') }}">Pengajuan Seminar Proposal</a></li>
-                            <li><a class="dropdown-item" href="{{route('pengumpulan-berkas-akhir')}}">Berkas Proposal</a></li>
+                            <li><a class="dropdown-item" href="#">List Pengajuan</a></li>
+                            <li><a class="dropdown-item" href="#">Berkas Proposal</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -81,34 +81,82 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="container my-4">
-        <div class="d-flex align-items-center mb-3">
-            <h1 class="me-3 mb-0">JADWAL BIMBINGAN</h1>
+    <div class="main-content">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="mb-4">Pengumpulan Berkas Akhir</h2>
+                
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Nama</label>
+                        <input type="text" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Kelas</label>
+                        <select class="form-select">
+                            <option selected>B</option>
+                        </select>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Tanggal Mulai</label>
+                            <div class="d-flex align-items-center">
+                                <input type="text" class="form-control" placeholder="dd-mm-yy">
+                                <span class="date-picker-icon">
+                                    <i class="fas fa-calendar"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Tanggal Selesai</label>
+                            <div class="d-flex align-items-center">
+                                <input type="text" class="form-control" placeholder="dd-mm-yy">
+                                <span class="date-picker-icon">
+                                    <i class="fas fa-calendar"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Judul Skripsi</label>
+                        <input type="text" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Periode</label>
+                        <select class="form-select">
+                            <option selected>-- Pilih Periode Mulai --</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">File Skripsi</label>
+                        <div class="input-group">
+                            <button class="btn btn-secondary" type="button">Pilih File</button>
+                            <input type="text" class="form-control" placeholder="Tidak ada file yang di pilih" readonly>
+                        </div>
+                        <small class="text-muted">pdf, doc, docx (maksimal 20mb)</small>
+                    </div>
+
+                    <div class="text-end mt-4">
+                        <button type="button" class="btn btn-danger me-2">Batalkan</button>
+                        <button type="submit" class="btn btn-success">Ajukan</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <hr>
-        <table class="table table-striped table-bordered">
-            <thead class="table-primary">
-                <tr>
-                    <th>Nama Dosen Pembimbing</th>
-                    <th>Tanggal</th>
-                    <th>Jadwal</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td colspan="5" class="text-center text-muted p-4">Belum ada jadwal</td>
-                </tr>
-            </tbody>
-        </table>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-light text-center py-3 mt-4">
+    <footer class="footer">
         <p class="mb-0">Copyright © 2024 - SISTA</p>
     </footer>
 
-    <!-- Bootstrap JS and Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-kit-code.js"></script>
 </body>
 </html>

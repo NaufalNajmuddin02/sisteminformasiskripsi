@@ -88,8 +88,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('pengajuan-proposal') }}">Pengajuan Proposal</a></li>
                             <li><a class="dropdown-item" href="{{ route('pendaftaran-seminar-proposal') }}">Pengajuan Seminar Proposal</a></li>
-                            <li><a class="dropdown-item" href="#">List Pengajuan</a></li>
-                            <li><a class="dropdown-item" href="#">Berkas Proposal</a></li>
+                            <li><a class="dropdown-item" href="{{route('pengumpulan-berkas-akhir')}}">Berkas Proposal</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
