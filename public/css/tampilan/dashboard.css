@@ -1,0 +1,72 @@
+/* Custom styles to maintain original design */
+body {
+    background-color: #f3f4f6;
+}
+
+/* navbar */
+.navbar {
+    background-color: rgb(163, 4, 4) !important;
+    color: white !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    color: white !important;
+    font-size: 1.5rem;
+    margin-left: 90px;
+}
+.profile-menu {
+    margin-right: 90px;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ddd !important;
+}
+
+.dropdown-menu {
+    min-width: 250px;
+}
+
+.profile-dropdown {
+    right: 20px;
+    top: 60px;
+    min-width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+.profile-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #3b82f6;
+}
+
+/* Main menu */
+.content{
+    margin-left: 90px;
+    margin-right: 90px;
+    padding: 50px;
+}
+
+.status-badge {
+    background: #00c853;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+
+.supervisor-header {
+    background: #8b0000;
+    color: white;
+}
+
+.calendar-icon {
+    background: #8b0000;
+    color: white;
+}
