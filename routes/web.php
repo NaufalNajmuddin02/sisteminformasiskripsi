@@ -18,6 +18,7 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/', [AuthController::class, 'login']);
 
+
 //dashboard
 Route::get('/dashboard', function () {return view('dashboard'); })->name('dashboard')->middleware('auth');
 Route::get('/profile/edit', [AuthController::class, 'editProfile'])->name('edit-profile');
@@ -41,3 +42,28 @@ Route::get('/logbimbingan',[LogBimbinganController::class, 'logbimbingan'])->nam
 Route::get('/jadwalbimbingan',[JadwalBimbinganController::class, 'jadwalbimbingan'])->name('jadwal-bimbingan');
 Route::get('/jadwalseminar',[JadwalSeminarController::class, 'jadwalseminar'])->name('jadwal-seminar-proposal');
 Route::get('/jadwalyudisium',[JadwalYudisiumController::class, 'jadwalyudisium'])->name('jadwal-yudisium');
+
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/admin/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('admin.dashboard');
+});
+
+// Route untuk dosen
+Route::middleware(['auth', 'role:dosen'])->group(function () {
+    Route::get('/dosen/dashboard', function () {
+        return view('dosen.dashboard');
+    })->name('dosen.dashboard');
+});
+
+// Route untuk mahasiswa
+Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
+    Route::get('/mahasiswa/dashboard', function () {
+        return view('mahasiswa.dashboard');
+    })->name('mahasiswa.dashboard');
+});
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+// Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
+// Route::post('/register', [AuthController::class, 'register']);
+// Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
+// Route::post('/', [AuthController::class, 'login']);

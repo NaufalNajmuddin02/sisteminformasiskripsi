@@ -9,14 +9,14 @@ class AddProfilePictureToUsersTable extends Migration
     public function up()
 {
     Schema::table('users', function (Blueprint $table) {
-        $table->string('profile_picture')->nullable()->after('kelas'); // Menambah kolom profile_picture
+        $table->string('kelas')->nullable()->after('email'); // Tambahkan kolom `kelas`
     });
 }
 
 public function down()
 {
     Schema::table('users', function (Blueprint $table) {
-        $table->dropColumn('profile_picture'); // Menghapus kolom jika migration rollback
+        $table->dropColumn('kelas'); // Hapus kolom `kelas` jika rollback
     });
 }
 

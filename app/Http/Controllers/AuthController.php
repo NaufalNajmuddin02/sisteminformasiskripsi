@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
+
 class AuthController extends Controller
 {
     public function showRegisterForm()
@@ -42,25 +43,33 @@ class AuthController extends Controller
     }
 
     public function login(Request $request)
-    {
-        // Validasi data
-        $request->validate([
-            'nim' => 'required|integer',
-            'password' => 'required|string|min:8',
-        ]);
+{
+    // Validasi data
+    $request->validate([
+        'nim' => 'required|integer',
+        'password' => 'required|string|min:8',
+    ]);
 
-        // Cari user berdasarkan NIM
-        $user = User::where('nim', $request->nim)->first();
+    // Cari user berdasarkan NIM
+    $user = User::where('nim', $request->nim)->first();
 
-        if ($user && Hash::check($request->password, $user->password)) {
-            // Login berhasil
-            Auth::login($user);
-            return redirect()->route('dashboard'); // Ganti 'dashboard' dengan route tujuan setelah login
+    if ($user && Hash::check($request->password, $user->password)) {
+        // Login berhasil
+        Auth::login($user);
+
+        // Redirect berdasarkan role
+        if ($user->role === 'admin') {
+            return redirect()->route('admin.dashboard');
+        } elseif ($user->role === 'dosen') {
+            return redirect()->route('dosen.dashboard');
+        } elseif ($user->role === 'mahasiswa') {
+            return redirect()->route('mahasiswa.dashboard');
         }
-
-        // Login gagal
-        return back()->with('error', 'NIM atau Kata Sandi salah.');
     }
+
+    // Login gagal
+    return back()->with('error', 'NIM atau Kata Sandi salah.');
+}
 
     public function editProfile()
     {

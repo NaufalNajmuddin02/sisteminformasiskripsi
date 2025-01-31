@@ -21,10 +21,26 @@ class User extends Authenticatable
         'prodi',
         'email',
         'no_hp',
+        'role',
     ];
 
     protected $hidden = [
         'password',
         'remember_token',
     ];
+
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isDosen()
+    {
+        return $this->role === 'dosen';
+    }
+
+    public function isMahasiswa()
+    {
+        return $this->role === 'mahasiswa';
+    }
 }
