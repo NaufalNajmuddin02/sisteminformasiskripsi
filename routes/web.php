@@ -9,7 +9,12 @@ use App\Http\Controllers\LogBimbinganController;
 use App\Http\Controllers\ProposalController;
 use App\Http\Controllers\JadwalBimbinganController;
 use App\Http\Controllers\JadwalSeminarController;
+use App\Http\Controllers\ManajemenSkripsiController;
 use App\Http\Controllers\JadwalYudisiumController;
+use App\Http\Controllers\ManajemenDosenAdminController;
+use App\Http\Controllers\ManajemenJadwalAdminController;
+use App\Http\Controllers\ManajemenMahasiswaAdminController;
+use App\Http\Controllers\ManajemenUserAdminController;
 use App\Http\Controllers\skripsi\PengumpulanBerkasAkhirController;
 
 //auth
@@ -47,6 +52,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin/dashboard', function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
+    Route::get('/admin/manajemen-skripsi', [ManajemenSkripsiController::class, 'index'])->name('admin.manajemen-skripsi');
+    Route::get('/admin/manajemen-mahasiswa', [ManajemenMahasiswaAdminController::class, 'index'])->name('admin.manajemen-mahasiswa');
+    Route::get('/admin/manajemen-dosen', [ManajemenDosenAdminController::class, 'index'])->name('admin.manajemen-dosen');
+    Route::get('/admin/manajemen-user', [ManajemenUserAdminController::class, 'index'])->name('admin.manajemen-user');
+    Route::get('/admin/jadwal', [ManajemenJadwalAdminController::class, 'index'])->name('admin.jadwal');
 });
 
 // Route untuk dosen
