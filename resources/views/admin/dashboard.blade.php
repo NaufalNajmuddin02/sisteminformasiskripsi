@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="css/tampilan/dashboard.css">
 </head>
 <body>
-<!-- <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
     @csrf
-</form> -->
+</form>
 
-<a href="{{ route('logout') }}" class="btn btn-primary text-white">Logout</a>
+<!-- <a href="{{ route('logout') }}" class="btn btn-primary text-white">Logout</a> -->
 
 
 <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
