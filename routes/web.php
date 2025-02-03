@@ -11,9 +11,14 @@ use App\Http\Controllers\JadwalBimbinganController;
 use App\Http\Controllers\JadwalSeminarController;
 use App\Http\Controllers\ManajemenSkripsiController;
 use App\Http\Controllers\JadwalYudisiumController;
+use App\Http\Controllers\ManajemenBimbinganDosenController;
 use App\Http\Controllers\ManajemenDosenAdminController;
 use App\Http\Controllers\ManajemenJadwalAdminController;
+use App\Http\Controllers\ManajemenJadwalDosenController;
 use App\Http\Controllers\ManajemenMahasiswaAdminController;
+use App\Http\Controllers\ManajemenMahasiswaDosenController;
+use App\Http\Controllers\ManajemenProposalDosenController;
+use App\Http\Controllers\ManajemenSkripsiDosenController;
 use App\Http\Controllers\ManajemenUserAdminController;
 use App\Http\Controllers\skripsi\PengumpulanBerkasAkhirController;
 
@@ -64,6 +69,18 @@ Route::middleware(['auth', 'role:dosen'])->group(function () {
     Route::get('/dosen/dashboard', function () {
         return view('dosen.dashboard');
     })->name('dosen.dashboard');
+
+    Route::get('/dosen/manajemen-bimbingan', [ManajemenBimbinganDosenController::class, 'index'])
+    ->name('dosen.manajemen-bimbingan');
+    Route::get('/dosen/manajemen-mahasiswa', [ManajemenMahasiswaDosenController::class, 'index'])
+    ->name('dosen.manajemen-mahasiswa');
+    Route::get('/dosen/manajemen-proposal', [ManajemenProposalDosenController::class, 'index'])
+    ->name('dosen.manajemen-proposal');
+    Route::get('/dosen/manajemen-skripsi', [ManajemenSkripsiDosenController::class, 'index'])
+    ->name('dosen.manajemen-skripsi');
+    Route::get('/dosen/jadwal', [ManajemenJadwalDosenController::class, 'index'])
+    ->name('dosen.jadwal');
+
 });
 
 // Route untuk mahasiswa
