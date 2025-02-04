@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use app\Models\User;
 
 class ManajemenUserAdminController extends Controller
 {
     //
     public function index(){
-        return view('admin.manajemen-user');
+        $users = User::all(); // Ambil semua data user
+
+        return view('admin.manajemen-user', compact('users'));
     }
 }

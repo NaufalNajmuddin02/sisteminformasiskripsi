@@ -98,7 +98,7 @@
                             <li><a class="dropdown-item" href="{{ route('admin.manajemen-skripsi') }}">Manajemen Skripsi</a></li>
                             <li><a class="dropdown-item" href="{{ route('admin.manajemen-mahasiswa') }}">Manajemen Mahasiswa</a></li>
                             <li><a class="dropdown-item" href="{{ route('admin.manajemen-dosen') }}">Manajemen Dosen</a></li>
-                            <li><a class="dropdown-item" href="{{ route('admin.manajemen-dosen') }}">Manajemen Users</a></li>
+                            <li><a class="dropdown-item" href="{{ route('admin.manajemen-user') }}">Manajemen Users</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('admin.jadwal') }}">Jadwal</a></li>

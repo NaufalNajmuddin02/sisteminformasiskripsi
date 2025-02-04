@@ -20,16 +20,27 @@
             <table class="table table-bordered">
                 <thead class="table-light">
                     <tr>
-                        <th class="text-center">JUDUL</th>
-                        <th class="text-center">Nama Pembimbing</th>
-                        <th class="text-center">Tanggal Pengajuan</th>
-                        <th class="text-center">Status</th>
+                        <th class="text-center">username</th>
+                        <th class="text-center">Kelas</th>
+                        <th class="text-center">Prodi</th>
+                        <th class="text-center">NIM</th>
+                        <th class="text-center">Semester</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @forelse ($users as $user)
                     <tr>
-                        <td colspan="4" class="text-center text-muted py-4">Data Kosong</td>
+                        <td class="text-center">{{ $user->username }}</td>
+                        <td class="text-center">{{ $user->kelas }}</td>
+                        <td class="text-center">{{ $user->prodi }}</td>
+                        <td class="text-center">{{ $user->nim }}</td>
+                        <td class="text-center">{{ $user->semester }}</td>
                     </tr>
+                    @empty
+                    <tr>
+                        <td class="text-center" colspan="5">Data Kosong</td>
+                    </tr>
+                    @endforelse
                 </tbody>
             </table>
         </main>
