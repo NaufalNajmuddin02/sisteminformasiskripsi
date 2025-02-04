@@ -23,7 +23,7 @@
                         <th class="text-center">JUDUL</th>
                         <th class="text-center">Nama Pembimbing</th>
                         <th class="text-center">Tanggal Pengajuan</th>
-                        <th class="text-center">Status</th>
+                        <th class="text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>
